@@ -1,0 +1,53 @@
+.tm-gallery-item {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .tm-gallery-item figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tm-gallery-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  
+  .tm-gallery-item figcaption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  .tm-gallery-title {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .tm-gallery-description {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .tm-gallery-price {
+    margin: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
