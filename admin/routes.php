@@ -6,7 +6,7 @@ $controllers = array(
   'foods' => ['index', 'edit', 'remove', 'save'],
   'news' => ['index', 'edit', 'remove','save'],
   'members'=>['login', 'check', 'logout'],
-  'groups'=>['index', 'role']
+  'groups'=>['index', 'role','checkpermit']
 ); 
 
 

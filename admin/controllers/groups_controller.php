@@ -2,6 +2,7 @@
 require_once('controllers/base_controller.php');
 require_once('../models/groupadmin.php');
 require_once('../models/role.php');
+require_once('../models/grouprole.php');
 
 class GroupsController extends BaseController
 {
@@ -28,6 +29,14 @@ class GroupsController extends BaseController
       'groupidsi' => $id
     );
     $this->render('role', $data);
+
+  }
+  public function checkpermit()
+  {
+    $q = $_POST["q"];
+    $groupid = $_POST["groupid"];
+    $roleid = $_POST["roleid"];
+    GroupRole::setpermit($q, $groupid, $roleid);
 
   }
 }

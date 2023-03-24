@@ -1,5 +1,3 @@
-
-
 <?php
 class GroupRole
 {
@@ -10,11 +8,11 @@ class GroupRole
 
   function __construct()
   {
-    
+
   }
   static function check($groupid, $roleid)
   {
-    $db=DB::getInstance();
+    $db = DB::getInstance();
     return $db->query("select * from grouprole where groupid='$groupid' and roleid='$roleid'")->fetch(PDO::FETCH_OBJ);
   }
   static function getRolepermit($id)
@@ -25,12 +23,23 @@ class GroupRole
 
     foreach ($req->fetchAll() as $item) {
       $r = new GroupRole();
-      $r->id=$item['id'];
+      $r->id = $item['id'];
       $r->groupid = $item['groupid'];
       $r->roleid = $item['roleid'];
       $list[] = $r;
     }
 
     return $list;
+  }
+  static function setpermit($q, $groupid, $roleid)
+  {
+    $db = DB::getInstance();
+    $sql = "";
+    if ($q == 'add') {
+      $sql = "insert into grouprole (groupid,roleid) values ($groupid, $roleid)";
+    } else {
+      $sql = "delete from grouprole where groupid=$groupid and roleid=$roleid";
+    }
+    return $db->query($sql);
   }
 }
